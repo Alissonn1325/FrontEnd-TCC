@@ -1,7 +1,7 @@
 <script setup>
-import ProductList from '@/components/ProductList.vue';
+import MainList from '@/components/Main.vue';
 </script>
 
 <template>
-  <product-list />
+  <main-list />
 </template>

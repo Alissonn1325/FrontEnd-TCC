@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <div class="logo">
-    <img src="@/assets/logo.png" alt="FakeStore Logo" />
+    <img src="@/assets/logo.png" alt="FurBuds Logo" />
     <h2>FurBuds</h2>
   </div>
 </template>
@@ -17,7 +17,6 @@
 .logo img {
   width: 3rem;
   height: 3rem;
-  border-radius: 50%;
   object-fit: cover;
 }
 

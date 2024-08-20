@@ -1,5 +1,7 @@
 @import '@mdi/font/css/materialdesignicons.css';
 @import url('https://fonts.googleapis.com/css2?family=Belleza&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
 
 *,
 *::before,
@@ -11,6 +13,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   line-height: 1.6;
   font-family: 'Quicksand', sans-serif;
