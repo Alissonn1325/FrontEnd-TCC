@@ -21,17 +21,30 @@ onBeforeRouteUpdate(() => {
       <img src="@/assets/logo.png" alt="FurBuds Logo">
     </div>
     <div class="hamburger" @click="showMenu = !showMenu">
-      <i class="mdi mdi-menu menu" />  
+      <i class="mdi mdi-menu menu" />
     </div>
+    <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
+    <RouterLink to="/login">
+      <i class="mdi mdi-home" />
+      home
+    </RouterLink>
+  </div>
   </div>
 </template>
 
 <style scoped>
-.icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  font-size: 1.7rem;
+
+#footerMenu {
+    position: fixed;
+    top: 15%;
+    width: 15%;
+
+    width: 100%;
+    border-top: #EEEEEE 1px solid;
+    background-color: white;
+
+    display: block;
+    padding: 1rem;
 }
 
 .hamburger:hover {
@@ -60,6 +73,9 @@ img {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  top: 0;
+  position: fixed;
+  background-color: #FAC105;
 }
 
 .logo{

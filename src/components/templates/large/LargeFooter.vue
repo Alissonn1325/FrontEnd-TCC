@@ -6,9 +6,14 @@
     <RouterLink to="/">Privacy & Terms</RouterLink>
   </div>
   <div class="icons">
-    <i class="mdi mdi-facebook" />
-    <i class="mdi mdi-twitter" />
-    <i class="mdi mdi-instagram" />
+    <i class="mdi mdi-instagram icone"/> 
+    <p>
+      @furbudsofc
+    </p>
+    <i class="mdi mdi-github icone"/>
+    <p>
+      FurBuds
+    </p>
   </div>
 </template>
 <style scoped>
@@ -16,9 +21,9 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 4rem;
-  font-size: 1.2rem;
-  color: #000;
+  gap: 6rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
 .links a {
@@ -27,8 +32,14 @@
 
 .icons {
   padding-right: 3rem;
-  display: flex;
-  gap: 4rem;
-  font-size: 2.2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.icone {
+  font-size: 3.2rem;
 }
 </style>

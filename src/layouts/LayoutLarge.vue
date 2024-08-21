@@ -46,8 +46,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
-  background-color: #eeeeee;
+  padding: 0.2rem;
+  background-color: #FAC105;
   grid-area: footer;
 }
 </style>
