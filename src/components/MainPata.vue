@@ -24,7 +24,7 @@
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 8rem;
-  margin-top: 3rem;
+  margin-top: 7.5rem;
 }
 
 .adote-hoje{

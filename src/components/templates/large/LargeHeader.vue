@@ -24,10 +24,16 @@ onBeforeRouteUpdate(() => {
       <i class="mdi mdi-menu menu" />
     </div>
     <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
-    <RouterLink to="/login">
-      <i class="mdi mdi-home" />
-      home
+      <p class="hamburger" @click="showMenu = !showMenu">
+        X
+      </p>
+    <RouterLink to="/">
+      <i/>
+      HOME
     </RouterLink>
+    <div class="dogmenu">
+      <img src="@/assets/dogmenu.png" alt="">
+    </div>
   </div>
   </div>
 </template>
@@ -36,15 +42,35 @@ onBeforeRouteUpdate(() => {
 
 #footerMenu {
     position: fixed;
-    top: 15%;
+    top: 0;
     width: 15%;
+    right: 0;
 
-    width: 100%;
-    border-top: #EEEEEE 1px solid;
-    background-color: white;
+    width: 40%;
+    border-top: orange 1px solid;
+    border-radius: 0px 0px 0px 30px;
+    background-color: orange;
 
     display: block;
     padding: 1rem;
+    padding-right: 4rem;
+
+    text-align: end;
+    font-size: 1.5rem;
+    font-family: 'Kavoon';
+}
+
+#footerMenu a{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+.dogmenu {
+  display: flex ;
+  justify-content: center;
 }
 
 .hamburger:hover {
