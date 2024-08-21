@@ -34,16 +34,16 @@
   align-items: center;
   border-radius: 80px;
   padding: 15px;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   font-family: "Kavoon";
-  width: 40%;
+  width: 30%;
 }
 
 .adote{
   border: black solid 0px;
   border-bottom: black solid 5px;
-  font-size: 100px;
+  font-size: 70px;
 }
 
 </style>

@@ -27,6 +27,10 @@ onBeforeRouteUpdate(() => {
       <p class="hamburger" @click="showMenu = !showMenu">
         X
       </p>
+      <RouterLink to="/login">
+        <i/>
+        LOGIN
+      </RouterLink>
     <RouterLink to="/">
       <i/>
       HOME
@@ -46,17 +50,17 @@ onBeforeRouteUpdate(() => {
     width: 15%;
     right: 0;
 
-    width: 40%;
-    border-top: orange 1px solid;
+    width: 36%;
+    border-top: #F2782C 1px solid;
     border-radius: 0px 0px 0px 30px;
-    background-color: orange;
+    background-color: #F2782C;
 
     display: block;
     padding: 1rem;
     padding-right: 4rem;
 
     text-align: end;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: 'Kavoon';
 }
 
@@ -78,29 +82,29 @@ onBeforeRouteUpdate(() => {
 }
 
 .menu {
-  font-size: 4rem;
+  font-size: 3.4rem;
   margin-right: 1.2rem;
   width: 100px;
 }
 
 img {
-  height: 100px;
+  height: 80px;
 }
 
 .furbuds{
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin-left: 1.2rem;
   width: 100px;
   font-family: "Kavoon", serif;
 }
 
 .header{
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   top: 0;
-  position: fixed;
   background-color: #FAC105;
 }
 

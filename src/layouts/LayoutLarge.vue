@@ -28,6 +28,7 @@
 }
 
 header {
+  position: static;
   display: flex;
   widows: 100vw;
   justify-content: space-evenly;

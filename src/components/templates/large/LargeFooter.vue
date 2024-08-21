@@ -40,6 +40,6 @@
 }
 
 .icone {
-  font-size: 3.2rem;
+  font-size: 2rem;
 }
 </style>

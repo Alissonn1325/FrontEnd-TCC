@@ -1,8 +1,8 @@
 <script setup></script>
 <template>
   <div class="logo">
-    <img src="@/assets/logo.png" alt="FurBuds Logo" />
     <h2>FurBuds</h2>
+    <img src="@/assets/logo.png" alt="FurBuds Logo" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@
 }
 
 .logo h2 {
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Kavoon', sans-serif;
   font-weight: 400;
   font-style: normal;
 }

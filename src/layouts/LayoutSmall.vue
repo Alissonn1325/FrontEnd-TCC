@@ -27,8 +27,8 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
-  border-bottom: #eeeeee 2px solid;
-  background-color: white;
+  border-bottom: #FAC105 2px solid;
+  background-color: #FAC105;
 
   z-index: 10;
   position: fixed;
@@ -52,17 +52,18 @@ main {
 }
 
 footer {
-  border-top: #eeeeee 1px solid;
-  box-shadow: 0 0 10px 0 #eeeeee;
-  padding: 1.5rem;
+  border-top: #FAC105 1px solid;
+  box-shadow: 0 0 10px 0 #FAC105;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-top: auto;
-  background-color: white;
+  background-color: #FAC105;
 
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  color: white;
+  color: #FAC105;
   text-align: center;
   z-index: 10;
 }
