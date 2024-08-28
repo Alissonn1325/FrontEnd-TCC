@@ -1,5 +1,4 @@
 <script setup>
-import LogoTitle from '@/components/templates/LogoTitle.vue';
 
 import { ref } from 'vue';
 import { onBeforeRouteUpdate } from 'vue-router';
@@ -12,12 +11,20 @@ onBeforeRouteUpdate(() => {
 </script>
 
 <template>
-    <LogoTitle/>
-    <div class="hamburger" @click="showMenu = !showMenu">
+  <div class="cabeca">
+    <div>
+      <img src="@/assets/logo.png" alt="">
+    </div>
+    <div style="width: 30px;">
+      <p>
+        FurBuds
+      </p>
+    </div>
+    <div class="hamburger" @click="showMenu = !showMenu" style="width: 30px;">
       <i class="mdi mdi-menu menu" />
     </div>
     <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
-      <p class="hamburger" @click="showMenu = !showMenu">
+      <p class="hamburger close" @click="showMenu = !showMenu">
         X
       </p>
       <RouterLink to="/login">
@@ -29,33 +36,46 @@ onBeforeRouteUpdate(() => {
         HOME
       </RouterLink>
     </div>
-</template>
+  </div>
+  </template>
 
 <style scoped>
 
-.hamburger {
-  font-size: 1.5rem;
-  padding: 1rem;
-  padding-bottom: 1rem;
+.cabeca {
+  font-family: 'Kavoon';
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+
+img {
+  width: 15%;
+}
+
+.menu {
+  font-size: 1.9rem;
+}
+
+.close {
+  padding: 1rem;
 }
 
 #footerMenu {
     position: fixed;
     top: 0;
-    width: 15%;
     right: 0;
 
-    width: 36%;
+    width: 100%;
     border-top: #F2782C 1px solid;
-    border-radius: 0px 0px 0px 30px;
+    border-radius: 0px 0px 30px 30px;
     background-color: #F2782C;
 
     display: block;
     padding: 1rem;
 
     text-align: end;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Kavoon';
 }
 
@@ -67,10 +87,4 @@ onBeforeRouteUpdate(() => {
     color: black;
 }
 
-.icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  font-size: 1.7rem;
-}
 </style>
