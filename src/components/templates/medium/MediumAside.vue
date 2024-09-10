@@ -1,9 +1,7 @@
 <script setup>
-import LogoTitle from '@/components/templates/LogoTitle.vue';
 </script>
 <template>
   <div class="logo_and_menu">
-    <logo-title class="mb-2" />
     <div class="divider" />
     <div class="menu">
       <router-link to="/">
@@ -15,7 +13,6 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
       A
     </div>
   </div>
-  <logo-title />
 </template>
 <style scoped>
 .mb-2 {

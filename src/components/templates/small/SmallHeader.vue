@@ -12,17 +12,12 @@ onBeforeRouteUpdate(() => {
 
 <template>
   <div class="cabeca">
-    <div>
-      <img src="@/assets/logo.png" alt="">
-    </div>
-    <div style="width: 30px;">
-      <p>
-        FurBuds
-      </p>
-    </div>
-    <div class="hamburger" @click="showMenu = !showMenu" style="width: 30px;">
-      <i class="mdi mdi-menu menu" />
-    </div>
+      <div>
+        <img src="@/assets/logo.png" alt="">
+      </div>
+      <div class="hamburger" @click="showMenu = !showMenu" >
+        <i class="mdi mdi-menu menu" />
+      </div>
     <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
       <p class="hamburger close" @click="showMenu = !showMenu">
         X
@@ -41,6 +36,14 @@ onBeforeRouteUpdate(() => {
 
 <style scoped>
 
+.cabecalo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .cabeca {
   font-family: 'Kavoon';
   display: flex;
@@ -50,7 +53,7 @@ onBeforeRouteUpdate(() => {
 }
 
 img {
-  width: 15%;
+  width: 10%;
 }
 
 .menu {
