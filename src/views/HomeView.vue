@@ -17,7 +17,9 @@
     </div>
   </div>
 
+  <div class="glasse">
     <img src="@/assets/maindogfs.png" alt="" class="glasses">
+  </div>
 
   <div class="animals">
     <div>
@@ -85,14 +87,14 @@
   font-size: 70px;
 }
 
-.glasses {
+.glasses{
   width: 100%;
 }
 
-@media screen and (max-width :600px) {
+@media screen and (max-width:600px) {
 
   .pata {
-    width: 500px;
+    width: 100%;
   };
 
   .glasses {
