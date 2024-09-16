@@ -27,14 +27,18 @@ onBeforeRouteUpdate(() => {
       <p class="hamburger" @click="showMenu = !showMenu">
         X
       </p>
+      <RouterLink to="/">
+        <i/>
+        INICIO
+      </RouterLink>
       <RouterLink to="/login">
         <i/>
         LOGIN
       </RouterLink>
-    <RouterLink to="/">
-      <i/>
-      HOME
-    </RouterLink>
+      <RouterLink to="/Animals">
+        <i/>
+        QUERO ADOTAR
+      </RouterLink>
     <div class="dogmenu">
       <img src="@/assets/dogmenu.png" alt="">
     </div>
@@ -62,6 +66,7 @@ onBeforeRouteUpdate(() => {
     text-align: end;
     font-size: 1.6rem;
     font-family: 'Kavoon';
+
 }
 
 #footerMenu a{

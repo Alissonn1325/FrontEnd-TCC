@@ -22,13 +22,17 @@ onBeforeRouteUpdate(() => {
       <p class="hamburger close" @click="showMenu = !showMenu">
         X
       </p>
+      <RouterLink to="/">
+        <i/>
+        INICIO
+      </RouterLink>
       <RouterLink to="/login">
         <i/>
         LOGIN
       </RouterLink>
-      <RouterLink to="/">
+      <RouterLink to="/Animals">
         <i/>
-        HOME
+        QUERO ADOTAR
       </RouterLink>
     </div>
   </div>

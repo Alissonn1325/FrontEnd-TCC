@@ -1,4 +1,5 @@
 <script setup>
+import AnimalInfo from "@/components/AnimalInfo.vue"
 </script>
 
 <template>
@@ -21,16 +22,14 @@
     <img src="@/assets/maindogfs.png" alt="" class="glasses">
   </div>
 
-  <div class="animals">
-    <div>
-    <img src="@/assets/chottin.jpeg" alt="" class="animals-img">
-    </div>
-    <div class="animals-info">
-      <p>
-        rafa <br>
-        chorro <br>
-        medio
-      </p>
+  <AnimalInfo/>
+
+  <div class="more">
+    <div class="ver">
+      <RouterLink to="/Animals">
+        <i/>
+        Ver Mais
+      </RouterLink>
     </div>
   </div>
 
@@ -38,24 +37,28 @@
 
 <style scoped>
 
-.animals{
+
+.more {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.animals-info {
-  font-family: "kavoon";
+.more a {
+  text-decoration: none;
+  font-family: 'Kavoon';
+  color: black;
+  font-size: 75px;
+}
+
+.ver {
+  background-color: #FAC105;
+  border-radius: 100px;
+  padding: 1%;
+  width: 35%;
   text-align: center;
-  border: black solid 5px;
-  border-radius: 50px;
-  width: 300px;
-}
-
-.animals-img {
-  border: #FAC105 solid 5px;
-  border-radius: 30px;
-  width: 300px;
 }
 
 .main-pata{
@@ -92,6 +95,19 @@
 }
 
 @media screen and (max-width:600px) {
+
+.ver {
+  width: 80%;
+  border-radius: 50px;
+}
+
+.more a {
+  font-size: 50px;
+}
+
+.more {
+  margin-top: 10%;
+}
 
   .pata {
     width: 100%;

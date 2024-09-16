@@ -39,7 +39,6 @@ header {
 
 main {
   min-height: 80%;
-  padding: 2rem 0 2rem 0;
   grid-area: main;
 }
 
