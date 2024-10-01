@@ -39,6 +39,10 @@ onBeforeRouteUpdate(() => {
         <i/>
         QUERO ADOTAR
       </RouterLink>
+      <RouterLink to="/Register">
+        <i/>
+        CADASTRAR ANIMAL
+      </RouterLink>
     <div class="dogmenu">
       <img src="@/assets/dogmenu.png" alt="">
     </div>

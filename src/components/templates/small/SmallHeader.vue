@@ -34,6 +34,10 @@ onBeforeRouteUpdate(() => {
         <i/>
         QUERO ADOTAR
       </RouterLink>
+      <RouterLink to="/Register">
+        <i/>
+        CADASTRAR ANIMAL
+      </RouterLink>
     </div>
   </div>
   </template>

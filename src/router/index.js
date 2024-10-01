@@ -25,6 +25,11 @@ const router = createRouter({
           name: 'Animals',
           component: () => import('@/views/AnimalsView.vue'),
         },
+        {
+          path: '/register',
+          name: 'Register',
+          component: () => import('@/views/CadastroView.vue'),
+        },
       ],
     },
   ],

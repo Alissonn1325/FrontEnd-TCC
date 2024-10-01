@@ -38,6 +38,7 @@ header {
 }
 
 main {
+  margin-top: 5%;
   min-height: 80%;
   grid-area: main;
 }
