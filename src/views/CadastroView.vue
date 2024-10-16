@@ -1,66 +1,137 @@
 <script setup>
+import { onMounted, reactive, ref } from 'vue';
 
+import AddRaca from '@/components/ModalAddRaca.vue'
+import { useRacaStore } from '@/stores/racas';
+import { useAnimalStore } from '@/stores/animal';
+import { useUploaderStore } from '@/stores/uploader';
+import ModalAddRaca from '@/components/ModalAddRaca.vue';
+
+const racaStore = useRacaStore();
+const animalStore = useAnimalStore();
+const uploaderStore = useUploaderStore();
+
+const showModal = ref(false);
+
+const file = ref(null);
+const previewImage = ref('');
+
+const animal = reactive({
+  nome: '',
+  idade: '',
+  sexo: '',
+  status: '',
+  especie: '',
+  situacao: '',
+  raca: ''
+});
+
+const uploadImage = (e) => {
+  file.value = e.target.files[0];
+  previewImage.value = URL.createObjectURL(e.target.files[0]);
+};
+
+async function save() {
+  await animalStore.createAnimal(animal);
+  Object.assign(animal, {
+    nome: '',
+    idade: '',
+    sexo: '',
+    status: '',
+    especie: '',
+    situacao: '',
+    raca: ''
+  });
+}
+
+onMounted(async () => {
+  await racaStore.getRaca();
+});
 </script>
 
 <template>
-
-<div class="register">
-    <div class="infos">
-        <p>
-            bomba
-        </p>
-        <p>
-            bomba 2
-        </p>
-        <p>
-            bomba 3
-        </p>
-    </div>
+        
+        <h1>Adicionar Animal</h1>
+        <form class="form" @submit.prevent="save">
+            <div class="row-form">
+                <label for="title">Nome</label>
+                <input type="text" id="title" v-model="animal.nome" />
+            </div>
+            <div class="row-form">
+                <label for="description">Idade</label>
+                <textarea id="description" v-model="animal.idade"></textarea>
+            </div>
+            <div class="row-form">
+                <label for="raca">raca</label>
+                <div class="row ">
+                    <select id="raca" v-model="animal.raca">
+                        <option value="" disabled>Selecione uma Raça</option>
+                        <option
+                        v-for="raca in racaStore.racas"
+                        :key="raca.id"
+                        :value="raca.id"
+                        >
+                        {{ raca.raca }}
+                    </option>
+                </select>
+                <button class="btn-icon" @click="showModal = !showModal">+</button>
+            </div>
+        </div>
+        <button class="btn-send" type="submit">Adicionar</button>
+    </form>
     
-        <button class="record">
-            Registrar
-        </button>
-
-</div>
     
+    <ModalAddRaca v-if="showModal" @close="showModal = !showModal" />
+
 </template>
 
 <style scoped>
 
-.register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  align-items: center;
 }
 
-.infos {
-    background-color: #FAC105;
-    padding: 1.34%;
-    border-radius: 40px;
-    font-size: 35px;
-    font-family: 'Kavoon';
-    width: 70%;
+.row-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  max-width: 400px;
 }
 
-.record {
-    background-color: #FAC105;
-    border: #FAC105;
-    border-radius: 20%;
-    margin-top: 2%;
-    padding: 0.5%;
-    font-size: 25px;
-    font-family: 'Kavoon';
+.form button.btn-send {
+  background-color: #FAC105;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 200px;
 }
 
+.form button.btn-icon {
+  background-color: #FAC105;
+  color: black;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
-@media screen and (max-width: 600px) {
-    .register {
-        margin-top: 5%;
-        width: 90%;
-    }
-
-    .record {
-        margin-top: 5%;
-    }
+.previewImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #FAC105;
+  padding: 0.1rem;
 }
 </style>
