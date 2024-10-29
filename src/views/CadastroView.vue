@@ -50,7 +50,6 @@ onMounted(async () => {
 </script>
 
 <template>
-        
         <h1>Adicionar Animal</h1>
         <form class="form" @submit.prevent="save">
             <div class="row-form">
@@ -59,10 +58,10 @@ onMounted(async () => {
             </div>
             <div class="row-form">
                 <label for="description">Idade</label>
-                <textarea id="description" v-model="animal.idade"></textarea>
+                <input type="number" id="description" v-model="animal.idade" />
             </div>
             <div class="row-form">
-                <label for="raca">raca</label>
+                <label for="raca">Raça</label>
                 <div class="row ">
                     <select id="raca" v-model="animal.raca">
                         <option value="" disabled>Selecione uma Raça</option>
