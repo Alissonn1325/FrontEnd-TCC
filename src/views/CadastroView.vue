@@ -25,6 +25,7 @@ const animal = reactive({
   status: '',
   especie: '',
   situacao: '',
+  image_attachment_key: '',
   raca: ''
 });
 
@@ -42,6 +43,7 @@ async function save() {
     status: '',
     especie: '',
     situacao: '',
+    image_attachment_key: '',
     raca: ''
   });
 }
@@ -52,67 +54,98 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1>Adicionar Animal</h1>
-  <form class="form" @submit.prevent="save">
-    <div class="row-form">
-      <label for="title">Nome</label>
-      <input type="text" id="title" v-model="animal.nome" />
-    </div>
-    <div class="row-form">
-      <label for="description">Idade</label>
-      <input type="number" id="description" v-model="animal.idade" />
-    </div>
-    <div class="row-form">
-      <label for="description">Situação</label>
-      <select id="raca" v-model="animal.situacao">
-        <option value="" disabled>Selecione a Situação</option>
-        <option v-for="situacao in situacaoStore.situacao" :key="situacao.id" :value="situacao.id">
-          {{ situcao.situcao }}
-        </option>
+  <div class="formulario">  
+    <h1>Cadastrar Animal</h1>
+    <form class="form" @submit.prevent="save">
+      <div class="itens">
+        <div class="row-form">
+          <label for="title">Nome</label>
+          <input type="text" id="title" v-model="animal.nome" />
+        </div>
+        <div class="row-form">
+          <label for="description">Idade</label>
+          <input type="number" id="description" v-model="animal.idade" />
+        </div>
+        <div class="row-form">
+          <label for="description">Situação</label>
+          <select id="situacao
+          " v-model="animal.situacao">
+          <option value="" disabled>Selecione a Situação</option>
+          <option v-for="situacao in situacaoStore.situacao" :key="situacao.id" :value="situacao.id">
+            {{ situcao.situcao }}
+          </option>
+        </select>
+      </div>
+      <div class="row-form">
+        <label for="description">Sexo</label>
+        <select v-model="animal.sexo">
+        <option :value="1">Macho</option>
+        <option :value="2">Fêmea</option>
       </select>
     </div>
     <div class="row-form">
-      <label for="description">Sexo</label>
-      <select id="raca" v-model="animal.sexo">
-        <option value="" disabled>Selecione o Sexo</option>
-        <option v-for="sexo in animalStore.sexo" :key="sexo.id" :value="sexo.id">
-          {{ sexo.sexo }}
-        </option>
+      <label for="description">Especie</label>
+      <select v-model="animal.especie">
+        <option :value="1">Cachorro</option>
+        <option :value="2">Gato</option>
       </select>
     </div>
     <div class="row-form">
       <label for="image">Imagem</label>
       <div class="row">
-        <input type="file" id="image" @change="uploadImage" />
+        <input type="file" id="foto" @change="uploadImage" />
         <img
-          v-if="previewImage"
-          :src="previewImage"
-          class="previewImage"
-          alt="preview"
+        v-if="previewImage"
+        :src="previewImage"
+        class="previewImage"
+        alt="preview"
         />
+        </div>
+      </div>
+      <div class="row-form">
+        <label for="raca">Raça</label>
+        <div class="row ">
+          <select id="raca" v-model="animal.raca">
+            <option value="" disabled>Selecione uma Raça</option>
+            <option v-for="raca in racaStore.racas" :key="raca.id" :value="raca.id">
+              {{ raca.raca }}
+            </option>
+          </select>
+          <button class="btn-icon" @click="showModal = !showModal">Add Raça</button>
+        </div>
       </div>
     </div>
-    <div class="row-form">
-      <label for="raca">Raça</label>
-      <div class="row ">
-        <select id="raca" v-model="animal.raca">
-          <option value="" disabled>Selecione uma Raça</option>
-          <option v-for="raca in racaStore.racas" :key="raca.id" :value="raca.id">
-            {{ raca.raca }}
-          </option>
-        </select>
-        <button class="btn-icon" @click="showModal = !showModal">+</button>
-      </div>
-    </div>
-    <button class="btn-send" type="submit">Adicionar</button>
-  </form>
-
-
-  <ModalAddRaca v-if="showModal" @close="showModal = !showModal" />
-
-</template>
+      <button class="btn-send" type="submit">Cadastrar</button>
+    </form>
+    
+    
+    <ModalAddRaca v-if="showModal" @close="showModal = !showModal" />
+    
+  </div>
+  </template>
 
 <style scoped>
+
+input, option, select, img{
+  font-family: 'Kavoon';
+}
+
+.itens {
+  background-color: #FAC105;
+  border-radius: 70px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  font-family: 'Kavoon';
+  font-size: large;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -127,29 +160,29 @@ onMounted(async () => {
   flex-direction: column;
   font-size: 1.3rem;
   max-width: 400px;
+  padding-top: 30px;
 }
 
 .form button.btn-send {
   background-color: #FAC105;
   color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 70px;
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: larger;
   cursor: pointer;
   width: 200px;
+  font-family: 'Kavoon';
 }
 
 .form button.btn-icon {
-  background-color: #FAC105;
   color: black;
   border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
   margin-left: 0.3rem;
   font-size: 1rem;
   cursor: pointer;
+  font-family: 'Kavoon';
+  border-radius: 70px;
 }
 
 .previewImage {

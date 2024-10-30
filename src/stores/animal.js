@@ -20,9 +20,5 @@ export const useAnimalStore = defineStore('animal', () => {
     getAnimal();
   }
 
-  async function getSexo() {
-    animais.value = await animalService.getSexo();
-  }
-
-  return { animais, createAnimal, getAnimal, getAnimalByRaca, getSexo };
+  return { animais, createAnimal, getAnimal, getAnimalByRaca };
 });
