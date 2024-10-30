@@ -15,4 +15,9 @@ export default class AnimalService {
     const response = await axios.post('/animais/', animal);
     return response.data;
   }
+
+  async getSexo() {
+    const response = await axios.get('/animais/');
+    return response.data.results;
+  }
 }
