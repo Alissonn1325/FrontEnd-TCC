@@ -35,9 +35,7 @@ import AnimalInfo from "@/components/AnimalInfo.vue"
 
 </template>
 
-<style scoped>
-
-
+<style scoped>  
 .more {
   display: flex;
   flex-direction: column;

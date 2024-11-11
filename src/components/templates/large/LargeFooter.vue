@@ -1,9 +1,9 @@
 <script setup></script>
 <template>
   <div class="links">
-    <RouterLink to="/">Help</RouterLink>
-    <RouterLink to="/">Contact Us</RouterLink>
-    <RouterLink to="/">Privacy & Terms</RouterLink>
+    <a href="https://ifc.edu.br/">Nosso IFC</a>
+    <a href="https://vale.com/pt/adocao-de-animais">Site de Inspiração</a>
+    <a href="https://ceua.ifc.edu.br/">Ética de Uso de Animais</a>
   </div>
   <div class="icons">
     <i class="mdi mdi-instagram icone"/> 
