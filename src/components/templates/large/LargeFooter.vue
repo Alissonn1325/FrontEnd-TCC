@@ -21,13 +21,15 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 6rem;
-  font-size: 1.5rem;
-  color: black;
+  gap: 22rem;
+  font-size: 1.7rem;
+  font-family: 'Kavoon';
 }
 
 .links a {
   text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-shadow: #795e00 0.1em 0.1em 0.2em
 }
 
 .icons {
@@ -43,5 +45,6 @@
 .icons a {
   text-decoration: none;
   color: #000;
+  text-shadow: #795e00 0.1em 0.1em 0.2em
 }
 </style>

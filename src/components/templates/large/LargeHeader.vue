@@ -105,6 +105,7 @@ img {
   margin-left: 1.2rem;
   width: 100px;
   font-family: "Kavoon", serif;
+  text-shadow: #795e00 0.1em 0.1em 0.2em
 }
 
 .header{
@@ -115,6 +116,7 @@ img {
   width: 100%;
   top: 0;
   background-color: #FAC105;
+  box-shadow: #795e00 0.1em 0.3em 0.5em
 }
 
 .logo{
