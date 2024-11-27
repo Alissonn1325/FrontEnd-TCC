@@ -30,6 +30,11 @@ const router = createRouter({
           name: 'Register',
           component: () => import('@/views/CadastroView.vue'),
         },
+        {
+          path: '/animal',
+          name: 'animal',
+          component: () => import('@/views/OneAnimalView.vue'),
+        },
       ],
     },
   ],

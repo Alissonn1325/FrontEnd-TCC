@@ -7,18 +7,26 @@
     <div>
     <img src="@/assets/chottin.jpeg" alt="" class="animals-img">
     </div>
-    <div class="animals-info">
-      <p>
-        rafa <br>
-        chorro <br>
-        medio
-      </p>
-    </div>
+    <RouterLink to="/Animal">
+      <div class="animals-info">
+        <p>
+          rafa <br>
+          chorro <br>
+          medio
+        </p>
+      </div>
+    </RouterLink>
   </div>
 
 </template>
 
 <style scoped>
+
+.animals a{
+  text-decoration: none;
+  color: black;
+}
+
 .animals{
   display: flex;
   flex-direction: column;

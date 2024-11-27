@@ -26,6 +26,7 @@ import AnimalsInfo from '@/components/AnimalInfo.vue'
     flex-direction: row;
     justify-content: center;
     margin-top: 3%;
+    padding: 1%;
 }
 
 .title{
