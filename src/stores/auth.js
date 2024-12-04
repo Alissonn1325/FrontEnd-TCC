@@ -1,19 +1,31 @@
-import { ref } from 'vue';
-import { defineStore } from 'pinia';
-
-import AuthService from '@/services/auth';
-const authService = new AuthService();
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+import { login, setAuthToken } from '@/services/auth'
 
 export const useAuthStore = defineStore('auth', () => {
-  const user = ref({});
+  const accessToken = ref(null)
+  const refreshToken = ref(null)
+  const user = ref(null)
 
-  async function setToken(token) {
-    user.value = await authService.postUserToken(token);
+  async function loginUser(email, password) {
+    try {
+      const { access, refresh } = await login(email, password)
+      accessToken.value = access
+      refreshToken.value = refresh
+      setAuthToken(access)
+    } catch (error) {
+      console.error('Erro ao fazer login:', error.response?.data || error)
+      throw new Error('Falha no login. Verifique suas credenciais.')
+    }
   }
 
-  function unsetToken() {
-    user.value = {};
+  function logoutUser() {
+    accessToken.value = null
+    refreshToken.value = null
+    setAuthToken(null)
   }
 
-  return { user, setToken, unsetToken };
-});
+  return {
+    accessToken, refreshToken, user, loginUser, logoutUser
+  }
+})
