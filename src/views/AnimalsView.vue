@@ -8,14 +8,6 @@ import AnimalsInfo from '@/components/AnimalInfo.vue'
     </div>
   <div class="infos">
     <AnimalsInfo />
-    <AnimalsInfo />
-    <AnimalsInfo />
-    <AnimalsInfo />
-
-    <AnimalsInfo />
-    <AnimalsInfo />
-    <AnimalsInfo />
-    <AnimalsInfo />
   </div>
 </template>
 

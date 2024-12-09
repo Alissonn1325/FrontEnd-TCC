@@ -31,8 +31,8 @@ const router = createRouter({
           component: () => import('@/views/CadastroView.vue'),
         },
         {
-          path: '/animal',
-          name: 'animal',
+          path: '/animal/:id',
+          name: 'AnimalDetails',
           component: () => import('@/views/OneAnimalView.vue'),
         },
       ],
