@@ -34,7 +34,7 @@ const router = createRouter({
           path: '/animal/:id',
           name: 'AnimalDetails',
           component: () => import('@/views/OneAnimalView.vue'),
-        },
+        },        
       ],
     },
   ],

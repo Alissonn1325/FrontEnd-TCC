@@ -25,24 +25,23 @@ function formatEspecie(especie) {
     <div 
       v-for="animal in animalStore.animais" 
       :key="animal.id" 
-      class="animals"
-    >
+      >
+    <RouterLink :to="`/Animal/${animal.id}`" class="link">
       <div>
         <img 
-          :src="animal.foto_url || '@/assets/default-animal.jpg'" 
-          alt="Foto do animal" 
-          class="animals-img" 
-        />
-      </div>
-      <RouterLink :to="`/Animal/${animal.id}`" class="link">
-        <div class="animals-info">
-          <p>
-            Nome: {{ animal.nome }} <br />
-            Espécie: {{ formatEspecie(animal.especie) }} <br />
-            Idade: {{ formatIdade(animal.idade) }}
-          </p>
-        </div>
-      </RouterLink>
+        :src="animal.foto?.url || '@/assets/default-animal.jpg'" 
+      alt="Foto do animal" 
+      class="animals-img" 
+      />
+    </div>
+    <div class="animals-info">
+      <p>
+        Nome: {{ animal.nome }} <br />
+        Espécie: {{ formatEspecie(animal.especie) }} <br />
+        Idade: {{ formatIdade(animal.idade) }}
+      </p>
+    </div>
+  </RouterLink>
     </div>
   </div>
 </template>
@@ -52,6 +51,10 @@ function formatEspecie(especie) {
 .link{
   text-decoration: none;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .animals-container {
@@ -59,13 +62,6 @@ function formatEspecie(especie) {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-}
-
-.animals {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5%;
 }
 
 .animals-info {

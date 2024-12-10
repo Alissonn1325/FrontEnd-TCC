@@ -23,5 +23,5 @@ export default class AnimalService {
   async getAnimalById(id) {
     const response = await axios.get(`/animais/${id}/`);
     return response.data;
-  }
+  }  
 }
