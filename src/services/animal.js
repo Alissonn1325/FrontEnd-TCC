@@ -20,6 +20,8 @@ export default class AnimalService {
     const response = await axios.get('/animais/');
     return response.data.results;
   }
+
+
   async getAnimalById(id) {
     const response = await axios.get(`/animais/${id}/`);
     return response.data;

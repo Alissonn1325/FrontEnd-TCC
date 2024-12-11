@@ -22,5 +22,6 @@ export const useAnimalStore = defineStore('animal', () => {
     }
   }
 
+
   return { animais, animalSelecionado, getAnimal, getAnimalById };
 });

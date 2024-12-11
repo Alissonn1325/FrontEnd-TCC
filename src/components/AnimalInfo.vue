@@ -76,6 +76,7 @@ function formatEspecie(especie) {
   border: #FAC105 solid 5px;
   border-radius: 30px;
   width: 400px;
+  height: 400px;
 }
 
 @media screen and (max-width:600px) {

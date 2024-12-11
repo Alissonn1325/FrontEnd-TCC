@@ -1,5 +1,6 @@
 <script setup>
 import AnimalsInfo from '@/components/AnimalInfo.vue'
+
 </script>
 
 <template>
