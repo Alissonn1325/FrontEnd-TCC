@@ -92,34 +92,43 @@ import AnimalInfo from "@/components/AnimalInfo.vue"
   width: 100%;
 }
 
+
+@media screen and (max-width:1040px) {
+  .adote {
+    
+  }
+
+  .pata{
+    width: 100%;
+  }
+}
+
 @media screen and (max-width:600px) {
 
 .ver {
-  width: 80%;
+  width: 100%;
   border-radius: 50px;
-}
-
-.more a {
-  font-size: 50px;
+  padding: 0;
 }
 
 .more {
   margin-top: 10%;
 }
 
-  .pata {
+
+.pata {
     width: 100%;
-  };
+};
 
-  .glasses {
+.glasses {
     width: 0;
-  }
+}
 
-  .main-pata{
+.main-pata{
     flex-direction: column-reverse;
-  }
+}
 
-  .adote-hoje{
+.adote-hoje{
     width: 70%;
 }
 

@@ -77,4 +77,27 @@ function formatEspecie(especie) {
   border-radius: 30px;
   width: 400px;
 }
+
+@media screen and (max-width:600px) {
+  .animals-img {
+  border: #FAC105 solid 5px;
+  border-radius: 30px;
+  width: 200px;
+}
+.animals-info {
+  font-family: "kavoon";
+  text-align: center;
+  border: black solid 5px;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.animals-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+}
 </style>

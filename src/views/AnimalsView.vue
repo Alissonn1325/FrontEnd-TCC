@@ -46,5 +46,10 @@ import AnimalsInfo from '@/components/AnimalInfo.vue'
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .title {
+    font-size: 40px;
+    width: 75%;
+  }
 }
 </style>
