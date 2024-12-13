@@ -124,4 +124,11 @@ h1 {
 .box input::placeholder {
   color: rgb(0, 0, 0);
 }
+
+@media screen and (max-width:600px) {
+  .login {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+}
 </style>

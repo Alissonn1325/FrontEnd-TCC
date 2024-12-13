@@ -37,36 +37,107 @@ onMounted(async () => {
 
 
 <style scoped>
-
 .tudin {
-    font-family: 'Kavoon';
+    font-family: 'Kavoon', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.btnconfirm {
-    background-color: #FAC105;
-    width: 55%;
-    text-align: center;
-    margin: 3%;
-    font-size: 70px;
-    border-radius: 35px;
-}
-
-img {
-    width: 70%;
-    margin: 2%;
+    margin: 20px;
 }
 
 .dogimg {
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    gap: 10px; 
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
 }
 
 .infos {
-    margin: 3.5%;
+    flex: 1; 
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+    margin-right: 10px;
+}
+
+img {
+    flex: 1; 
+    max-width: 400px; 
+    width: 100%;
+    aspect-ratio: 1;
+    border: 5px solid #FAC105;
+    border-radius: 15px; 
+    object-fit: cover; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.btnconfirm {
+    background-color: #FAC105;
+    color: black;
+    font-weight: bold;
+    width: 300px; 
+    text-align: center;
+    margin-top: 100px;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+
+.btnconfirm p {
+    margin: 0;
+}
+
+
+@media (max-width: 1040px) {
+    .dogimg {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+
+    .infos {
+        margin-right: 0; 
+        margin-bottom: 15px; 
+        font-size: 18px;
+    }
+
+    img {
+        max-width: 300px;
+    }
+
+    .btnconfirm {
+        width: 80%;
+        font-size: 22px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .dogimg {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+
+    .infos {
+        font-size: 16px; 
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+
+    img {
+        max-width: 250px; 
+    }
+    .btnconfirm {
+        width: 90%; 
+        font-size: 20px; 
+        padding: 10px; 
+    }
 }
 </style>
+
