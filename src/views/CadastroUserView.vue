@@ -1,24 +1,32 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { login, setAuthToken } from '@/services/auth';
+import { registerUser } from '@/services/auth';
 
 const router = useRouter();
 
-const username = ref('');
-const password = ref('');
+const nome = ref('');
+const email = ref('');
+const senha = ref('');
+const contato = ref('');
 const loading = ref(false);
 
-async function handleLogin() {
+async function handleRegister() {
   loading.value = true;
   try {
-    const response = await login(username.value, password.value);
-    setAuthToken(response.access);
-    alert('Login realizado com sucesso!');
-    console.log('Token JWT:', response.access);
-    router.push('/');
+    const userData = {
+      nome: nome.value,
+      email: email.value,
+      senha: senha.value,
+      contato: contato.value,
+    };
+
+    await registerUser(userData);
+    alert('Cadastro realizado com sucesso!');
+    router.push('/login');
   } catch (error) {
-    alert('Erro ao fazer login. Verifique suas credenciais.');
+    console.error('Erro ao cadastrar usuário:', error);
+    alert('Erro ao cadastrar. Verifique os dados e tente novamente.');
   } finally {
     loading.value = false;
   }
@@ -27,25 +35,34 @@ async function handleLogin() {
 
 <template>
   <div id="container">
-    <div class="login">
-      <h1>Login</h1>
+    <div class="register">
+      <h1>Cadastro</h1>
       <div class="box">
         <span class="mdi mdi-account-circle"></span>
-        <input type="text" class="form-control" placeholder="Email" v-model="username" required />
+        <input type="text" class="form-control" placeholder="Nome" v-model="nome" required />
       </div>
       <div class="box">
-        <span class="mdi mdi-account-key"></span>
-        <input type="password" class="form-control" placeholder="Senha" v-model="password" required />
+        <span class="mdi mdi-email"></span>
+        <input type="email" class="form-control" placeholder="Email" v-model="email" required />
+      </div>
+      <div class="box">
+        <span class="mdi mdi-lock"></span>
+        <input type="password" class="form-control" placeholder="Senha" v-model="senha" required />
+      </div>
+      <div class="box">
+        <span class="mdi mdi-phone"></span>
+        <input type="text" class="form-control" placeholder="Contato" v-model="contato" required />
       </div>
       <div class="buttons">
-        <router-link to="Register" class="botao">Cadastrar</router-link>
-        <button class="botao" @click="handleLogin" :disabled="loading">
-          {{ loading ? 'Carregando...' : 'Logar' }}
+        <router-link to="/login" class="botao">Voltar</router-link>
+        <button class="botao" @click="handleRegister" :disabled="loading">
+          {{ loading ? 'Carregando...' : 'Cadastrar' }}
         </button>
-        </div>
-        </div>
+      </div>
+    </div>
   </div>
 </template>
+
 <style scoped>
 #container {
   display: flex;
@@ -56,13 +73,13 @@ async function handleLogin() {
   font-family: 'Kavoon';
 }
 
-.login {
+.register {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fac105;
   width: 50vh;
-  height: 40vh;
+  height: 50vh;
   border-radius: 3vh;
   margin-top: 5%;
 }
@@ -123,12 +140,5 @@ h1 {
 
 .box input::placeholder {
   color: rgb(0, 0, 0);
-}
-
-@media screen and (max-width:600px) {
-  .login {
-    margin-right: 10%;
-    margin-left: 10%;
-  }
 }
 </style>
