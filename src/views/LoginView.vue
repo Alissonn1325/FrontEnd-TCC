@@ -16,7 +16,7 @@ async function handleLogin() {
     setAuthToken(response.access);
     alert('Login realizado com sucesso!');
     console.log('Token JWT:', response.access);
-    router.push('/trabalhadores');
+    router.push('/');
   } catch (error) {
     alert('Erro ao fazer login. Verifique suas credenciais.');
   } finally {
