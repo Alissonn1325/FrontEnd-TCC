@@ -3,7 +3,7 @@ import axios from 'axios'
 const API_URL = 'http://0.0.0.0:19003/api/usuarios/'
 
 export async function login(email, password) {
-  const response = await axios.post(API_URL, {
+  const response = await axios.get(API_URL, {
     email,
     password,
   })
