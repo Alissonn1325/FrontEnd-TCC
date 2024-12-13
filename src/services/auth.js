@@ -10,10 +10,14 @@ export async function login(email, password) {
   return response.data
 }
 
+export async function registerUser(userData) {
+  const response = await axios.post(API_URL, userData);
+  return response.data;
+}
+
 export function setAuthToken(token) {
   if (token) {
     localStorage.setItem('authToken', token)
-    // localStorage.setItem('psg_auth_token2', token)
   } else {
     delete localStorage.delItem('psg_auth_token')
   }

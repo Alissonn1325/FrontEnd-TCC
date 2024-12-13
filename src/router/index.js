@@ -34,6 +34,11 @@ const router = createRouter({
           path: '/animal/:id',
           name: 'AnimalDetails',
           component: () => import('@/views/OneAnimalView.vue'),
+        },
+        {
+          path: '/cadastro',
+          name: 'Cadastro',
+          component: () => import('@/views/CadastroUserView.vue'),
         },        
       ],
     },
