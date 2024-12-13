@@ -31,9 +31,7 @@ function formatEspecie(especie) {
         "Encontre amor em quatro patas: Furbuds, onde cada rabo abana uma história de adoção!"
       </p>
     </div>
-    <div >
       <img src="@/assets/pata.png" alt="" class="pata">
-    </div>
   </div>
 
   <div class="glasse">
@@ -167,12 +165,16 @@ function formatEspecie(especie) {
 
 
 @media screen and (max-width:1040px) {
-  .adote {
-    
+  .pata{
+    width: 50%;
   }
 
-  .pata{
-    width: 100%;
+  .adote-hoje {
+    font-size: 25px;
+  }
+
+  .adote {
+    font-size: 55px;
   }
 }
 
