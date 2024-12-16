@@ -38,7 +38,7 @@ async function handleLogin() {
         <input type="password" class="form-control" placeholder="Senha" v-model="password" required />
       </div>
       <div class="buttons">
-        <router-link to="Register" class="botao">Cadastrar</router-link>
+        <router-link to="cadastro" class="botao">Cadastrar</router-link>
         <button class="botao" @click="handleLogin" :disabled="loading">
           {{ loading ? 'Carregando...' : 'Logar' }}
         </button>
