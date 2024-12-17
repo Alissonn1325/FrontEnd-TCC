@@ -82,7 +82,11 @@ define(['./workbox-b5f7729d'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
+ brach-theo-lastday
     "revision": "0.e8rh7pm0nj8"
+
+    "revision": "0.ac17ssapoko"
+ main
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {

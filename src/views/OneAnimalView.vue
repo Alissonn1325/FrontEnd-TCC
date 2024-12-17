@@ -27,14 +27,18 @@ onMounted(async () => {
         alt="Foto do animal" 
       />
     </div>
+ brach-theo-lastday
     <div class="descri">
       <p>
         {{ animalStore.animalSelecionado.descricao }}
       </p>
     </div>
     <div class="btnconfirm">
+
+    <router-link to="/adocao" class="btnconfirm">
+main
       <p>Quero Esse</p>
-    </div>
+    </router-link>
   </div>
   <div v-else>
     <p>Carregando informações do animal...</p>
@@ -98,6 +102,7 @@ img {
     font-size: 24px;
     border-radius: 35px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
