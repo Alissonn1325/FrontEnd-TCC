@@ -34,7 +34,7 @@ const uploadImage = async (e) => {
 
   try {
     const response = await uploaderStore.uploadImage(file.value);
-    animal.image_attachment_key = response; // Recebe a chave da imagem
+    animal.image_attachment_key = response;
   } catch (error) {
     console.error("Erro ao enviar imagem:", error);
     alert("Erro ao enviar a imagem. Tente novamente.");
