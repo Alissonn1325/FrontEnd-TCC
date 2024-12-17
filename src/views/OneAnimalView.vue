@@ -26,9 +26,9 @@ onMounted(async () => {
         alt="Foto do animal" 
       />
     </div>
-    <div class="btnconfirm">
+    <router-link to="/adocao" class="btnconfirm">
       <p>Quero Esse</p>
-    </div>
+    </router-link>
   </div>
   <div v-else>
     <p>Carregando informações do animal...</p>
@@ -86,6 +86,7 @@ img {
     font-size: 24px;
     border-radius: 35px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
