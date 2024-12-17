@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://0.0.0.0:19003/token/';
-const API_URL2 = 'http://0.0.0.0:19003/api/register/';
+const API_URL = 'https://backend-tcc-hb0p.onrender.com/token/';
+const API_URL2 = 'https://backend-tcc-hb0p.onrender.com/api/register/';
 
 export async function login(email, password) {
   const response = await axios.post(API_URL, {
