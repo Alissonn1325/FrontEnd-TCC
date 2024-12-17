@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
-
 import RacaService from '@/services/racas';
+
 const racaService = new RacaService();
 
 export const useRacaStore = defineStore('raca', () => {

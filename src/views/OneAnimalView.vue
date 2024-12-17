@@ -18,6 +18,7 @@ onMounted(async () => {
       <p class="infos">
         Nome: {{ animalStore.animalSelecionado.nome }} <br>
         Espécie: {{ animalStore.animalSelecionado.especie === 1 ? 'Cachorro' : 'Gato' }} <br>
+        Raça: {{ animalStore.animalSelecionado.raca }} <br>
         Idade: {{ animalStore.animalSelecionado.idade }} {{ animalStore.animalSelecionado.idade === 1 ? 'ano' : 'anos' }} <br>
         Sexo: {{ animalStore.animalSelecionado.sexo === 1 ? 'Macho' : 'Fêmea' }}
       </p>
@@ -25,6 +26,11 @@ onMounted(async () => {
         :src="animalStore.animalSelecionado.foto?.url || '@/assets/default-animal.jpg'" 
         alt="Foto do animal" 
       />
+    </div>
+    <div class="descri">
+      <p>
+        {{ animalStore.animalSelecionado.descricao }}
+      </p>
     </div>
     <div class="btnconfirm">
       <p>Quero Esse</p>
@@ -36,6 +42,7 @@ onMounted(async () => {
 </template>
 
 
+
 <style scoped>
 .tudin {
     font-family: 'Kavoon', sans-serif;
@@ -43,6 +50,11 @@ onMounted(async () => {
     flex-direction: column;
     align-items: center;
     margin: 20px;
+}
+
+.decri p {
+  width: 75%;
+  background-color: #FAC105;
 }
 
 .dogimg {
